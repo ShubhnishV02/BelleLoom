@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block section %}
+
+<div class="container full-testimonial-card-and-form-section">
+    <div class="full-testimonial-card-section-only">
+        <div class="">
+            <h4 style="text-align: center;">BelleLoom's Speak</h4>
+        </div>
+
+        <div class="left-testimonial-card-section">
+            <div class="img-card-section">
+                <img src="/static/img/human.png" alt="">
+            </div>
+            <div class="name-description-card-section">
+                <h5>Quis dolor molestias voluptatem nulla sed quidem.</h5>
+                <h6>Daljeet Kaur</h6>
+                <p>Chandigarh, Punjab</p>
+                <span>03 Oct, 2023</span>
+            </div>
+        </div>
+
+        <div class="left-testimonial-card-section">
+            <div class="img-card-section">
+                <img src="/static/img/girl.png" alt="">
+            </div>
+            <div class="name-description-card-section">
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia cupiditate earum impedit
+                    consequuntur!</h5>
+                <h6>Kangna</h6>
+                <p>Meerut, Uttar Pradesh</p>
+                <span>05 Oct, 2023</span>
+            </div>
+        </div>
+
+        <div class="left-testimonial-card-section">
+            <div class="img-card-section">
+                <img src="/static/img/human.png" alt="">
+            </div>
+            <div class="name-description-card-section">
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia cupiditate earum impedit
+                    voluptatem nulla sed quidem.</h5>
+                <h6>meenu chopra</h6>
+                <p>Delhi</p>
+                <span>05 Oct, 2023</span>
+            </div>
+        </div>
+
+        <div class="left-testimonial-card-section">
+            <div class="img-card-section">
+                <img src="/static/img/avatar6.png" alt="">
+            </div>
+            <div class="name-description-card-section">
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia cupiditate earum impedit
+                    consequuntur!
+                    Quis dolor molestias voluptatem nulla sed quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aut!</h5>
+                <h6>Neelima Bhatt</h6>
+                <p>Delhi</p>
+                <span>08 Oct, 2023</span>
+            </div>
+        </div>
+
+        <div class="left-testimonial-card-section">
+            <div class="img-card-section">
+                <img src="/static/img/girl.png" alt="">
+            </div>
+            <div class="name-description-card-section">
+                <h5>Lorem ipsum dolor sit amet.</h5>
+                <h6>Priya Sharma</h6>
+                <p>Mumbai</p>
+                <span>09 Oct, 2023</span>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="right-testimonial-form-section">
+        <form> 
+            <div class="Add-Testimonials-heading">
+            <i class="fa-regular fa-comment fa-beat"></i>
+            <span> Add Testimonial</span>
+        </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingName" placeholder="Name" required>
+                <label for="floatingName">Name</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" required>
+                <label for="floatingEmail">Email</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingMobile" placeholder="Mobile" required>
+                <label for="floatingMobile">Mobile</label>
+              </div>
+
+              <div class="mb-3 d-flex">
+                <input type="text" class="form-control" id="floatingCity" placeholder="City" required>
+                <!-- <label for="floatingCity">City</label> -->
+                
+                <input type="text" class="form-control " id="State" placeholder="State" required>
+                <!-- <label for="State">State</label> -->
+              </div>
+
+              <div class="form-floating mb-3">
+                <textarea type="textarea" class="form-control" id="floatingTextarea" placeholder="Leave a comment here" required></textarea>
+                <label for="floatingTextarea">Comment</label>
+              </div>
+
+              <div class="mb-2">
+                  <input type="file" id="formFile">
+                  <label for="formFile" class="form-label" style="line-height: 0; padding-top: 1vw;">Upload Photo:</label><br>
+                  <span class="form-file-allowed-p-tag">Allowed file types: Jpeg,jpg,png,gif</span>
+              </div>
+              <button type="submit" class="btn" style="background-color: rgb(25, 25, 49);color: white;padding: 10px 4vw; margin:0.8vw 0 0 0.2vw;">Submit your Testimonial</button>
+        </form>
+    </div>
+
+</div>
+
+<br><br>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        autoplay: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        autoplayTimeout: 1000,  //2000ms = 2s
+        autoplayHoverPause: true,
+
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 20,
+            depth: 200,
+            modifier: 3,
+            slideShadows: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+    });
+</script>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,318 @@
+{% extends "base.html" %}
+{% block section %}
+
+<head>
+
+    <!-- external files for css and javascript -->
+    <link rel="stylesheet" type="text/css" href="/static/css/SinglePRODUCTS.css">
+
+    <script src="/static/js/custom.js" defer></script>
+
+</head>
+
+
+
+<!-- Craousel Images for mobile view  not for big screen display is none -->
+<div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/media/{{productsdata.Product_Image_Main}}" class="d-block w-100" alt="">
+        </div>
+        <div class="carousel-item">
+            <img src="/media/{{productsdata.Product_Image2}}" class="d-block w-100" alt="">
+        </div>
+        <div class="carousel-item">
+            <img src="/media/{{productsdata.Product_Image3}}" class="d-block w-100" alt="">
+        </div>
+        <div class="carousel-item">
+            <img src="/media/{{productsdata.Product_Image4}}" class="d-block w-100" alt="">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Craousel Images for mobile view  Over  -->
+
+
+
+<section class="container product-data">
+
+    <!-- left half for images  -->
+    <div class="left-images-products">
+        {% if productsdata.tag %}
+        <p class="product-viewtag fw-bold">{{productsdata.tag}}</p>
+        {% endif %}
+        <a href="/media/{{productsdata.Product_Image_Main}}" target="_blank"><img
+                src="/media/{{productsdata.Product_Image_Main}}" alt=""></a>
+    </div>
+
+    <div class="left-images-products-after-stickyness row">
+        <div class="d-flex">
+            <a href="/media/{{productsdata.Product_Image2}}" target="_blank"><img
+                    src="/media/{{productsdata.Product_Image2}}" alt=""></a>
+            <a href="/media/{{productsdata.Product_Image3}}" target="_blank"><img
+                    src="/media/{{productsdata.Product_Image3}}" alt=""></a>
+            <a href="/media/{{productsdata.Product_Image4}}" target="_blank"><img
+                    src="/media/{{productsdata.Product_Image4}}" alt=""></a>
+        </div>
+    </div>
+
+
+    <!-- right half for description -->
+    <div class="right-description-products">
+        <h3>{{productsdata.Product_Name}}</h3>
+        {% if productsdata.trending %}
+        <p style="font-size: 11px; padding: 7px 7px; font-weight: 700; " class="float-end badge bg-danger trending-tag">
+            Trending</p>
+
+        {% endif %}
+        <h2>₹{{productsdata.Selling_Price}}</h2>
+        <p>(Inclusive of all taxes)</p>
+
+        <h6 class="size">Size:
+            <input type="text" class="form-control" placeholder="1, 2 or 3" aria-label="size" name="sizeinput"
+                aria-describedby="size">
+            <p class="warn-message-for-size-selection p-0">*Please check the size chart before going to place the order.
+            </p>
+        </h6>
+        <div class="d-flex">
+            {% csrf_token %}
+            <input type="hidden" value="{{ productsdata.id }}" class="prod_id">
+            <label class="quantity">QUANTITY:
+                {% if productsdata.Product_Quantity > 0 %}
+                <span style="font-size: 11px; padding: 7px 7px; " class="badge bg-success mx-3 fw-bold">In stock</span>
+                {% else %}
+                <span style="font-size: 11px; padding: 7px 7px; " class="badge bg-danger mx-3 fw-bold">Out of
+                    stock</span>
+
+                {% endif %}
+            </label>
+            <div class="input-group text-center mb-3" style="width: 125px; margin-left: 1rem;">
+                <button class="input-group-text decrement-btn" id="decrement-btn">-</button>
+                <input type="text" name="product_qty" class="form-control text-center qnt-input bg-light" value="1">
+                <button class="input-group-text increment-btn" id="increment-btn">+</button>
+            </div>
+        </div>
+        <p id="warn-message" style="width: 100%;padding-left: 11vw; padding-top: 0; margin: 0 ;"></p>
+        <!-- <input type="number"  placeholder="1" aria-label="quantity"
+                    aria-describedby="quantity"> -->
+
+        <h6 id="sizeChartHiddenButton" style="cursor: pointer;max-width: 38%; padding: 0;"><img
+                src="/static/img/measuring-tape.png" alt="Size-Inch-Tape"> Size Chart
+        </h6>
+        <table class="Size-Inch-Tape">
+            <tr>
+                <th>Size</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+            </tr>
+            <tr>
+                <td>Mid waist</td>
+                <td>33</td>
+                <td>37</td>
+                <td>41</td>
+            </tr>
+            <tr>
+                <td>Hip</td>
+                <td>44</td>
+                <td>49</td>
+                <td>53</td>
+            </tr>
+        </table>
+
+        {% if productsdata.Product_Quantity > 0 %}
+
+        <button id="pr{{productsdata.id}}" class="add-to-cart cart rounded col-md-12">ADD TO CART</button>
+        {% endif %}
+        <span id="addcartmessage"></span>
+
+
+        <button class="wishlist rounded col-md-12"><i class="fa-solid fa-heart"></i> ADD TO WISHLIST</button>
+
+
+        <div class="Delivery-COD-Availablity">
+            <div class="d-flex">
+                <img src="/static/img/shipped.png" alt="">
+                <p>Check for Delivery & COD Availability</p>
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="input-group mb-1">
+                    <input type="text" class="form-control" placeholder="Pincode" id="inputPincode" aria-label="Pincode" name="pincode"
+                        aria-describedby="Pincode">
+                    <button class="btn px-5 bg-dark text-white" type="button" id="Pincode">Check</button>
+                </div>
+            </form>
+            <div class="left-right-for-delivery-COD-Description">
+                <div class="left-half-right-for-delivery">
+                    <h3></h3>
+                    <p class="delivery-cod-msg"></p>
+                </div>
+                <div class="right-half-right-for-COD">
+                    <h3></h3>
+                    <p class="delivery-cod-msg"></p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p class="ships-in-business-days">Ships in 7 business days.</p>
+        </div>
+        <div class="description-state">
+            <h6>DESCRIPTION:</h6>
+            <p class="product-description-single-page">{{productsdata.Product_Desc}}</p>
+            <ul>
+                <li>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </li>
+                <li>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                </li>
+                <li>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem.</p>
+                </li>
+                <li>
+                    <p>Lorem, ipsum.</p>
+                </li>
+            </ul>
+            <h6>Measurement Details:</h6>
+            <p style="margin: 0; padding: 2px;">Lorem ipsum dolor sit amet consectetur.</p>
+            <p style="margin: 0; padding: 2px;">Lorem ipsum dolor sit amet..</p>
+            <p style="margin: 0; padding: 2px; padding-bottom: 10px;">Lorem, ipsum dolor sit amet consectetur
+                adipisicing..</p>
+            <h6>Fabric:</h6>
+            <p style="margin: 0; padding: 2px; padding-bottom: 10px;">Lorem ipsum dolor sit amet.</p>
+            <h6>Care Instructions:</h6>
+            <p style="margin: 0; padding: 2px; padding-bottom: 10px;">Dry clean only</p>
+            <br>
+            <hr style="background-color: black;">
+
+
+            <h5 class="collapsible">DELIVERY & PAYMENTS</h5>
+            <div class="content">
+                <p style="line-height: 1.6;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. In fugit
+                    ullam aliquid vero itaque nam
+                    delectus odit molestias,
+                    totam neque velit mollitia? Dignissimos ex totam laudantium quidem, est assumenda eos cupiditate
+                    rerum, obcaecati odit
+                    fugiat ratione ea delectus labore dolorum facilis, quia similique? Adipisci natus dolorum
+                    deleniti excepturi. Exercitationem,
+                    error.</p>
+            </div>
+
+            <hr style="background-color: black;">
+
+            <h5 class="collapsible">RETURN & EXCHANGE</h5>
+            <div class="content">
+                <p style="line-height: 1.6;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. In fugit
+                    ullam aliquid vero itaque nam
+                    delectus odit molestias,
+                    totam neque velit mollitia? Dignissimos ex totam laudantium quidem, est assumenda eos cupiditate
+                    rerum, obcaecati odit
+                    fugiat ratione ea delectus labore dolorum facilis, quia similique? Adipisci natus dolorum
+                    deleniti excepturi. Exercitationem,
+                    error.</p>
+            </div>
+
+            <hr style="background-color: black;">
+
+            <div class="question-in-purchasing">
+                <h3>Have a question?</h3>
+                <p>Monday - Saturday 10:00 AM - 06:00 PM (IST)</p>
+                <div class="d-flex">
+                    <img src="/static/img/phone.png">
+                    <p>Call: <b>+91 8077468568</b></p>
+                </div>
+                <div class="d-flex">
+                    <img src="/static/img/email.png">
+                    <p>Email: email@example.com</p>
+                </div>
+                <div class="d-flex">
+                    <img src="/static/img/whatsapp2.png">
+                    <p>Order via: <b>Whatsapp:</b></p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</section>
+
+<script>
+
+    // 1. ---------------------------------js function for hide and show the SIZE CHART when click on Size Chart Button  -----------  //
+
+    const hideSizeChartButton = document.getElementById("sizeChartHiddenButton");
+    const sizeChartArea = document.getElementsByClassName('Size-Inch-Tape')[0];
+
+    hideSizeChartButton.addEventListener("click", () => {
+        if (sizeChartArea.style.display === 'none' || sizeChartArea.style.display === '') {
+            sizeChartArea.style.display = "block";
+        } else {
+            sizeChartArea.style.display = "none";
+        }
+    })
+
+
+
+    // ---------------------------------js function for hide and show the SIZE CHART is Over here  -----------  //
+
+
+    //   // 2.  ---------- Js function for show the error messages if the user enter "wrong size" or enter "wrong keyword" ----------------  //
+
+    //   const sizeSelectInput = document.querySelector(".size input");
+    //   const warnMessageForSizeSelection = document.getElementsByClassName("warn-message-for-size-selection")[0];
+
+    //   function val(elem) {
+    //     if (isNaN(elem.value)) {
+    //       warnMessageForSizeSelection.innerText = "Please Look at the 'Size Chart' and enter number only";
+    //       warnMessageForSizeSelection.style.color = "red";
+    //       warnMessageForSizeSelection.style.fontWeight = "600";
+    //     } else {
+    //       warnMessageForSizeSelection.innerText = "";
+    //       if (elem.value == "") {
+    //         warnMessageForSizeSelection.innerText = "";
+    //       } else if (elem.value < 1 || elem.value > 3) {
+    //         warnMessageForSizeSelection.innerText = "The Number you have entered is not in 'Size Chart'";
+    //         warnMessageForSizeSelection.style.color = "red";
+    //         warnMessageForSizeSelection.style.fontWeight = "600";
+    //       }
+    //     }
+    //   }
+
+    // ---------- Js function for show the error messages if the user enter "wrong size" or enter "wrong keyword" is OVER HERE ----------------  //
+
+
+    //   for collapsible content for payments details and return policy delails js code starts here 
+
+
+    const collapsibles = document.querySelectorAll(".collapsible");
+    collapsibles.forEach(collapsible => {
+        collapsible.addEventListener("click", function () {
+            this.classList.toggle("active");
+            const content = this.nextElementElement;
+            content.classList.toggle("show");
+        });
+    });
+
+
+
+
+
+</script>
+
+{% endblock %}
+
+
+</html>

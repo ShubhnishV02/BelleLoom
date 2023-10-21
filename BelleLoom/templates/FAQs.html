@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block section %}
+<div class="d-flex">
+    <button type="button" id="left-hidden-visual-effect"> More </button>
+    <p class="breadcrumb-About-us-display-for-mobile" style="color:gray; font-size:14.5px; padding: 1rem 10px 0 15px;">
+        HOME > ABOUT US</p>
+</div>
+
+<section class="about-body-bg container">
+    <div class="left-about-menu">
+
+        <div class="d-flex flex-column flex-shrink-0 p-0 text-dark bg-body-secondary">
+            <ul class="nav nav-pills flex-column mb-auto">
+
+                <li>
+                    <a href="{% url 'aboutus' %}" class="nav-link fw-semibold">
+                        About Us
+                        <!--border:1px solid gray; padding:4px 10px; background-color:grey;border-radius:3px; -->
+                    </a>
+                    <p class="about-questions">- What is BelleLoom </p>
+                    <p class="about-questions">- Why to use BelleLoom ?</p>
+                    <p class="about-questions">- Where we operate</p>
+                </li>
+
+                <li>
+                    <a href="{% url 'testimonials' %}" class="nav-link fw-semibold">
+                        Customer Reviews
+                        <!--border:1px solid gray; padding:4px 10px; background-color:grey;border-radius:3px; -->
+                    </a>
+                </li>
+
+                <li>
+                    <a href="" class="nav-link fw-semibold active">
+                        FAQs
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'privacy-policy' %}" class="nav-link fw-semibold">
+                        Privacy Policy
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'terms-and-conditions' %}" class="nav-link fw-semibold">
+                        Terms & Conditions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'contactus' %}" class="nav-link fw-semibold">
+                        Contact Us
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- <hr>
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="/static/img/login-icon.png" alt="" width="32" height="32" class="rounded-circle me-2">
+        <strong>more</strong>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        <li><a class="dropdown-item" href="#">New project...</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Sign out</a></li>
+      </ul>
+    </div> -->
+
+
+
+
+
+
+    <!--  about page description section  -->
+
+
+    <div class="right-about-menu">
+        <p class="breadcrumb-About-us-display-for-computer" style="color:gray; font-size:16.5px;padding-top:1rem;">HOME
+            >
+            ABOUT US</p>
+
+        <h2><img src="/static/img/faq.png" class="contact-logo">&nbsp; FAQs </h2><br><br>
+
+
+        <h5>Q: What is BelleLoom?</h5>
+        <p id="about-description" style="padding-top: 0;">A: BelleLoom is an online fashion store that brings you a wide
+            range of clothing and
+            accessories. What sets us apart is that most of our products are carefully made by hand, adding a special
+            touch and uniqueness
+            to each item. We believe in supporting skilled artisans and showcasing their craftsmanship..
+        </p>
+        <hr style="background-color: rgb(171, 170, 170);">
+
+        <h5>Q: What sizes are available for women's clothing?</h5>
+        <p id="about-description" style="padding-top: 0;">A: We offer a range of sizes to cater to different body types.
+            You can find size guides on the product pages to help you choose the right fit.
+        </p>
+        <hr style="background-color: rgb(171, 170, 170);">
+
+        <h5>Q: Can I return or exchange items if they don't meet my expectations?</h5>
+        <p id="about-description" style="padding-top: 0;">A: Our return and exchange policy applies to all products,
+            including women's clothing and accessories. If you are not satisfied with your purchase, you can return or
+            exchange items within 30 days. Please review our Returns & Exchanges page for detailed instructions.
+        </p>
+        <hr style="background-color: rgb(171, 170, 170);">
+
+        <h5>Q: Are there specific care instructions for sarees and clothing items?</h5>
+        <p id="about-description" style="padding-top: 0;">A: We provide care instructions for our clothing and sarees on
+            the product pages. It's important to follow these guidelines to ensure the longevity of your items.
+        </p>
+        <hr style="background-color: rgb(171, 170, 170);">
+
+        <h5>Q: How can I track the delivery of my order?</h5>
+        <p id="about-description" style="padding-top: 0;">A: Once your order is shipped, you will receive a tracking
+            number via email. You can use this tracking number to monitor the status and location of your package.
+        </p>
+        <hr style="background-color: rgb(171, 170, 170);">
+
+        <h5>Q: What is the estimated delivery time for orders?</h5>
+        <p id="about-description" style="padding-top: 0;">A: Delivery times may vary based on your location and chosen
+            shipping method. We strive to process and ship orders promptly. You can find estimated delivery times on our
+            Shipping & Delivery page.
+        </p>
+        <hr style="background-color: rgb(171, 170, 170);">
+
+        <h5>Q: Can I contact customer support if I have questions or need assistance?</h5>
+        <p id="about-description" style="padding-top: 0;">A: Absolutely! If you have any questions or need assistance
+            with your order, you can reach our customer support team through the "Contact Us" page on our website or by
+            emailing shubhnishv01@gmail.com
+        </p>
+        <hr style="background-color: rgb(171, 170, 170);">
+
+
+
+
+
+
+
+    </div>
+
+
+</section>
+
+<script>
+  
+    // this is the section where about us side bar and same as others side bar hide in mobile screens but shown in big screens and it can reverse the 
+    // display as per requirement on Click.
+  
+    
+    document.addEventListener("DOMContentLoaded", function () {
+      const hideButton = document.getElementById("left-hidden-visual-effect");
+      const areaHidden = document.querySelector(".left-about-menu");
+    
+      hideButton.addEventListener("click", hideButtonFunc);
+    
+      function hideButtonFunc() {
+        if (areaHidden.style.display === "none" || areaHidden.style.display === "") {
+          areaHidden.style.display = "block";
+        } else {
+          areaHidden.style.display = "none";
+        }
+      }
+    });
+    
+  </script>
+
+
+
+{% endblock %}
+
+</html>

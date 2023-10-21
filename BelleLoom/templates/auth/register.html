@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block section %}
+
+<div class="register-form-body">
+    <div class="container register-form-section">
+        <div class="container left-half-register-section">
+            <div class="question-account">
+                <h3>Already have an account?</h3>
+                <p>Sign in to your account to track your orders, manage your addresses, and more.
+                </p>
+                <a href="{% url 'loginpage' %}"><button type="submit" class="signin-button">SIGN IN</button></a>
+            </div>
+
+        </div>
+        <div class="container right-half-register-section">
+            <div class="form-body">
+                <form action="" method="POST" onsubmit="return validate()">
+                    {% csrf_token %}
+                    <h4 class="mb-3">Create an account</h4>
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" id="floatingName" placeholder="Name" required>
+                        <label for="floatingName">Name</label>
+                    </div>
+
+                    <div class="form-floating mb-2">
+                        {{ form.email }}
+                        <label for="floatingEmail">Email</label>
+                        {% if form.errors.email  %}
+                        <span class="text-danger" style="line-height: 1;">{{ form.errors.email }}</span>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-floating mb-2">
+                        {{ form.username }}
+                        <label for="floatingUsername">Username</label>
+                        {% if form.errors.username  %}
+                        <span class="text-danger" style="line-height: 1;">{{ form.errors.username }}</span>
+                        {% endif %}
+                    </div>
+                        
+
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" id="floatingMobile" placeholder="Mobile" required>
+                        <label for="floatingMobile">Mobile</label>
+                    </div>
+
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" id="floatingCountry" placeholder="Country" required>
+                        <label for="floatingCountry">Country</label>
+                    </div>
+
+                    <div class="form-floating mb-2">
+                        {{ form.password1 }}
+                        <label for="floatingPassword1">Password</label>
+                        {% if form.errors.password1  %}
+                        <span class="text-danger" style="line-height: 1;">{{ form.errors.password1 }}</span>
+                        {% endif %}
+                    </div>
+                        
+
+                    <div class="form-floating mb-2">
+                        {{ form.password2 }}
+                        <label for="floatingPassword2">Confirm Password</label>
+                        <span id="error_messages"> </span><br>
+                        <span id="error_Caps_messages"></span>
+                    </div>
+                    
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            I have read and agree to the<a href="{% url 'terms-and-conditions' %}"
+                                style="color:black; text-decoration: underline;">Terms & Conditions</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="register-button">SUBMIT</button>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    var errorMess = document.getElementById('error_messages');
+    var pas1 = document.getElementById("regpassword");
+    var confirmPas2 = document.getElementById("confirmPassword");
+    var flag = 1;    // 1 -> no error,   0 -> error occured
+
+    confirmPas2.addEventListener("keyup",check);
+
+    function check(){
+        if(confirmPas2.value.length > 0){
+            if( confirmPas2.value != pas1.value ){
+                errorMess.innerText = "Confirm Password does not Match";
+                errorMess.style.color = "red";
+                flag = 0;
+
+            }else{
+                errorMess.innerText = "";
+                flag = 1;
+            }
+        }else{
+            errorMess.innerText = "Please Enter Confirm Password";
+            errorMess.style.color = "darkorange";
+            flag = 0;
+        }
+    }
+
+    function validate(){
+        if(flag==1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    var capsMessage = document.getElementById('error_Caps_messages');
+
+    window.addEventListener('keyup', event => {
+        var isCaps = event.getModifierState('CapsLock');
+        if (isCaps){
+            capsMessage.innerText = "WARNING: CapsLock is ON";
+            capsMessage.style.color = "red";
+        }else{
+            capsMessage.innerText = "";
+        }
+    })
+
+</script>
+
+{% endblock %}

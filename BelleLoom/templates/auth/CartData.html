@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block section %}
+{% load custom_filters %}
+
+<head>
+    <script src="/static/js/custom.js" defer></script>
+</head>
+
+<section>
+    <h4 class="container mt-3">Your Shopping Cart</h4>
+    <div class="card-body-of-cart">
+        {% if cartdata %}
+        {% for item in cartdata %}
+
+
+        <div class="container cart-data-section product-data cart-item">
+            <!-- product-data class is used when we fetch the quantity and id in jqery code. so it can find the nearest class of decrement and increment button -->
+            <div class="left-card-cart-section">
+                <img src="{{ item.product.Product_Image_Main.url }}" alt="">
+
+            </div>
+            <div class="right-card-cart-section">
+                <div class="cart-product-specification">
+                    <div>
+                        <h6>{{ item.product.Product_Name| truncatechars:37}}</h6>
+                        <span>Size: 1</span><br>
+                    </div>
+                </div>
+                <div class="quantity-half-section"> 
+                    <div>
+                        <button class="btn btn-outline-danger cart-price-display-none-for-laptop-block-for-phone delete-cart-item"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+
+                    <input type="hidden" value="{{ item.product_id }}" class="prod_id">
+                    {% csrf_token %}
+                    {% if item.product.Product_Quantity >= item.product_qty %}
+                    <label class="quantity">QUANTITY</label>
+                    <div class="input-group text-center mb-3" style="width: 116px; margin-left: 1.2rem;">
+                        <button class="input-group-text changeQuantity decrement-btn" id="decrement-btn">-</button>
+                        <input type="text" name="quantity" class="form-control text-center qnt-input bg-light"
+                        value="{{ item.product_qty }}">
+                        <button class="input-group-text changeQuantity increment-btn" id="increment-btn">+</button>
+                    </div>
+                    
+
+                    
+                    <div class="align-items-center">
+                        <span class="cart-price-display-none-for-laptop-block-for-phone text-secondary" style="line-height: 1;">Qty: {{ item.product_qty }} x
+                            ₹{{ item.product.Selling_Price | stringformat:"d"}} = 
+                            ₹{{item.product.Selling_Price|multiply:item.product_qty|stringformat:"d"}}
+                        </span> 
+                        <a href="" class="cart-price-display-none-for-laptop-block-for-phone" style="color: black; text-decoration: underline; margin-left:3.8vw; line-height: 0;">update cart</a>
+                    </div>
+                    
+                    
+                    
+                    {% else %}
+                    <span id="out-of-stock-value" style="font-size: 13px; padding: 12px 10px; margin-top: 2.4vw;"
+                    class="badge bg-danger mx-4 fw-bold">Out of
+                    stock</span>
+                    
+                    {% endif %}
+                </div>
+                <div class="price-cart-section">
+                    <span>PRICE</span>
+                    <div class="multiplier-amount">
+                        <input name="quantity" class="btn qnt-input bg-light"
+                            value="{{ item.product_qty }}" readonly> 
+                        <h5> * &nbsp;&nbsp;₹ {{ item.product.Selling_Price | stringformat:"d" }}</h5>
+                    </div>
+                    <!-- string format method is use for showing the price without decimal like 500 instead of 500.99 -->
+                </div>
+
+
+                <div class="Amount-price-cart-section">
+                    <span>AMOUNT</span>
+                    <h5 id="updated-Total-Amount">₹ {{ item.product.Selling_Price|multiply:item.product_qty|stringformat:"d"}}</h5>        <!-- string format method is use for showing the price without decimal like 500 instead of 500.99 -->
+                    <a href="" style="color: black; text-decoration: underline;font-size: 1vw;">update cart</a>
+                </div>
+
+
+                <div class="remove-button-cart-section">
+                    <button type="button" class="btn btn-danger delete-cart-item"><i class="fa-solid fa-trash-can"></i>
+                        Remove</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+        <!-- <div class="container cart-adding-section">
+            <div class="right-totalcart-section">
+                <h4>Total Amount: </h4>
+                <span>RS. 20000</span>
+            </div>
+        </div> -->
+
+        <a href="/" class="container">
+            < continue shopping</a>
+        <a href="{% url 'checkout' %}" class="container fw-bold btn btn-primary">Checkout</a>
+
+
+        {% else %}
+        <h4 class="text-center container"
+            style="background-color: rgb(208, 206, 206); padding: 10px; margin: 8vw auto;">Your cart is empty</h4>
+
+        {% endif %}
+        
+
+    </div>
+
+</section>
+
+<script>
+
+
+</script>
+
+{% endblock %}

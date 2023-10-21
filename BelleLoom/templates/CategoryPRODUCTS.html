@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block section %}
+  
+<head>
+  <!-- external files for css and javascript -->
+  <link rel="stylesheet" type="text/css" href="/static/css/CategoryPRODUCTS.css">
+</head>
+
+  <section>
+    <div class="breadcrumb-category-product-mobile">
+      <a href="{% url 'homepage' %}">HOME </a><p>/</p>
+      <p>Category /</p>
+      <p>{{ category_name.Product_Name }}</p>
+    </div>
+    
+      <div>
+        <h4 style="text-align: center;">{{ category_name.Product_Name }}</h4>
+      </div>
+
+
+    <div class="image-products-category row">
+      {% if productsdata|length > 0 %}
+      {% for item in productsdata %}
+          
+        <div class="col-lg-3 col-6 col-md-3 mb-3">
+          <a href="{% url 'productview' item.category.slug item.slug %}" ><img src="/media/{{item.Product_Image_Main}}" class="d-block" alt="">
+            <p>{{item.Product_Name}}</p><span>{{ item.Selling_Price }}</span>
+          </a>
+        </div>
+        {% endfor %}  
+        {% else %}
+        <h4 class="container text-center bg-body-secondary my-5 py-2">Products of this Category Coming Soon..</h4>
+        
+        {% endif %}
+          
+    </div>
+
+    
+
+    <div class="Result-Description">
+      <p class="result">Total Results - {{ productsdata | length }}</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas sunt nulla obcaecati, possimus ea ipsam porro,
+        perferendis corrupti mollitia pariatur
+        modi debitis similique rem exercitationem tempore? Cumque delectus nobis placeat doloribus aspernatur ducimus,
+        amet, accusamus eos, quia odit aliquid
+        <br><br>
+        temporibus harum. Obcaecati distinctio minus nam explicabo at dolore voluptates tempora illo, tempore
+        accusantium corrupti, soluta velit similique nostrum
+        fugiat quasi!
+      </p>
+    </div>
+  </section>
+
+
+
+
+  {% endblock %}

@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+
+{% block section %}
+<div class="d-flex">
+  <button type="button" id="left-hidden-visual-effect"> More </button>
+  <p class="breadcrumb-About-us-display-for-mobile" style="color:gray; font-size:14.5px; padding: 1rem 10px 0 15px;">
+    HOME > ABOUT US</p>
+</div>
+
+<section class="about-body-bg container">
+  <div class="left-about-menu">
+
+    <div class="d-flex flex-column flex-shrink-0 p-0 text-dark bg-body-secondary"> 
+      <ul class="nav nav-pills flex-column mb-auto">
+
+        <li>
+          <a href="{% url 'aboutus' %}" class="nav-link fw-semibold active">
+            About Us <!--border:1px solid gray; padding:4px 10px; background-color:grey;border-radius:3px; -->
+          </a>
+          <p class="about-questions">- What is BelleLoom </p>
+          <p class="about-questions">- Why to use BelleLoom ?</p>
+          <p class="about-questions">- Where we operate</p>
+        </li>
+
+        <li>
+          <a href="{% url 'testimonials' %}" class="nav-link fw-semibold">
+            Customer Reviews <!--border:1px solid gray; padding:4px 10px; background-color:grey;border-radius:3px; -->
+          </a>
+        </li>
+
+        <li>
+          <a href="{% url 'faqs' %}" class="nav-link fw-semibold">
+            FAQs
+          </a>
+        </li>
+
+        <li>
+          <a href="{% url 'privacy-policy' %}" class="nav-link fw-semibold">
+            Privacy Policy
+          </a>
+        </li>
+
+        <li>
+          <a href="{% url 'terms-and-conditions' %}" class="nav-link fw-semibold">
+            Terms & Conditions
+          </a>
+        </li>
+
+        <li>
+          <a href="{% url 'contactus' %}" class="nav-link fw-semibold">
+            Contact Us
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <!-- <hr>
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="/static/img/login-icon.png" alt="" width="32" height="32" class="rounded-circle me-2">
+        <strong>more</strong>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        <li><a class="dropdown-item" href="#">New project...</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Sign out</a></li>
+      </ul>
+    </div> -->
+
+
+
+
+
+
+  <!--  about page description section  -->
+
+
+  <div class="right-about-menu">
+    <p class="breadcrumb-About-us-display-for-computer" style="color:gray; font-size:16.5px;padding-top:1rem;">HOME >
+      ABOUT US</p>
+    <p class="about-heading-question"><img src="/static/img/boutique.png" class="image-fluid mx-2" width="6%"> What is
+      BelleLoom ?</p>
+    <br>
+    <p id="about-description">BelleLoom is an online fashion store that brings you a wide range of clothing and beautiful
+      accessories.
+      What sets us apart is that most of our products are carefully made by hand, adding a special touch and uniqueness
+      to each item.
+      We believe in supporting skilled artisans and showcasing their craftsmanship.<br><br>
+
+      While we love handmade products, we also offer some items that are not handmade but still meet our quality and
+      style standards.
+      This means you have a choice between unique, handcrafted pieces and trendy, ready-made fashion items.<br><br>
+
+      Our goal is to give you the best of both worlds, allowing you to express your style with a mix of handmade and
+      non-handmade fashion.
+      Check out our collection today and discover the perfect fashion pieces that suit your taste and preferences. <br>
+    </p>
+    <h5>Happy Shopping</h5>
+
+    <br>
+    <hr style="background-color: rgb(171, 170, 170);"><br>
+
+
+    <p class="about-heading-question"><img src="/static/img/boutique2.png" class="image-fluid mx-2" width="6%"> Why to use
+      BelleLoom ?</p>
+    <br>
+    <p id="about-description">
+      BelleLoom isn't just an online shopping store; it's your gateway to a world of fashion enriched with authenticity
+      and convenience. Here's why you should choose us:<br><br>
+    <h6>Handcrafted Elegance: <p id="about-description">At BelleLoom, we celebrate the art of craftsmanship. Most of our
+        products are meticulously handmade, offering you unique,
+        one-of-a-kind fashion pieces that reflect skill and passion.</p>
+    </h6>
+    <h6>Quality is Paramount: <p id="about-description">We're dedicated to quality assurance. Whether it's handmade or
+        not, every item in our collection is chosen with precision, ensuring top-notch craftsmanship and durability.</p>
+    </h6>
+    <h6>Supporting Artistry: <p id="about-description">When you shop with us, you support artisans and designers who
+        bring their creativity to life. Your purchase becomes a catalyst for preserving traditional craftsmanship and
+        empowering artisans.</p>
+    </h6>
+    <h6>Versatile Selection: <p id="about-description">Our inventory spans traditional sarees, contemporary clothing,
+        chic accessories, and more. We cater to various tastes and occasions, ensuring you find the perfect piece.</p>
+    </h6>
+    <h6>Effortless Shopping: <p id="about-description">With our user-friendly online store, shopping becomes a breeze.
+        Explore our curated collection from the comfort of your home, and enjoy prompt doorstep delivery.</p>
+    </h6>
+    <h6>Empower Self-Expression: <p id="about-description">Fashion is your canvas for self-expression, and BelleLoom
+        empowers you to express your unique identity through your clothing and accessories.</p>
+    </h6>
+    <h6>Convenience Redefined: <p id="about-description">We redefine shopping convenience by offering an array of
+        fashionable choices at your fingertips, saving you time and effort.</p>
+    </h6>
+
+    <br>
+    In a nutshell, BelleLoom isn't just about buying clothes; it's about celebrating craftsmanship, expressing your
+    style, and supporting artisans.
+    Elevate your fashion game with us, and become part of a community that values authenticity and individuality. Choose
+    BelleLoom and embark on a
+    journey where fashion meets artistry.
+    </p>
+    <br>
+    <hr style="background-color: rgb(171, 170, 170);"><br>
+
+    <p class="about-heading-question"><img src="/static/img/shipped.png" class="image-fluid mx-2" width="6%"> Where we operate
+    </p>
+    <br>
+    <p id="about-description">We currently operate from Uttar Pradesh and provide our services in all over India.
+      You can contact us for more details About us, Pricing and for Location details and we respond your initiative as
+      per your request .
+      <br>
+    </p><br><br>
+    <h3> Happy Shopping <img src="/static/img/rose-icon.png" class="rose-icon"></h3>
+
+
+  </div>
+
+
+</section>
+
+<script>
+  
+  // this is the section where about us side bar and same as others side bar hide in mobile screens but shown in big screens and it can reverse the 
+  // display as per requirement on Click.
+
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const hideButton = document.getElementById("left-hidden-visual-effect");
+    const areaHidden = document.querySelector(".left-about-menu");
+  
+    hideButton.addEventListener("click", hideButtonFunc);
+  
+    function hideButtonFunc() {
+      if (areaHidden.style.display === "none" || areaHidden.style.display === "") {
+        areaHidden.style.display = "block";
+      } else {
+        areaHidden.style.display = "none";
+      }
+    }
+  });
+  
+</script>
+
+{% endblock %}
+</html>

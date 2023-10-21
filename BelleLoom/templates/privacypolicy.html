@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block section %}
+<div class="d-flex">
+    <button type="button" id="left-hidden-visual-effect"> More </button>
+    <p class="breadcrumb-About-us-display-for-mobile" style="color:gray; font-size:14.5px; padding: 1rem 10px 0 15px;">
+        HOME > PRIVACY POLICY</p>
+</div>
+
+<section class="about-body-bg container">
+    <div class="left-about-menu">
+
+        <div class="d-flex flex-column flex-shrink-0 p-0 text-dark bg-body-secondary">
+            <ul class="nav nav-pills flex-column mb-auto">
+
+                <li>
+                    <a href="{% url 'aboutus' %}" class="nav-link fw-semibold">
+                        About Us
+                        <!--border:1px solid gray; padding:4px 10px; background-color:grey;border-radius:3px; -->
+                    </a>
+                    <p class="about-questions">- What is BelleLoom </p>
+                    <p class="about-questions">- Why to use BelleLoom ?</p>
+                    <p class="about-questions">- Where we operate</p>
+                </li>
+
+                <li>
+                    <a href="{% url 'testimonials' %}" class="nav-link fw-semibold">
+                        Customer Reviews
+                        <!--border:1px solid gray; padding:4px 10px; background-color:grey;border-radius:3px; -->
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'faqs' %}" class="nav-link fw-semibold">
+                        FAQs
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'privacy-policy' %}" class="nav-link fw-semibold active">
+                        Privacy Policy
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'terms-and-conditions' %}" class="nav-link fw-semibold">
+                        Terms & Conditions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'contactus' %}" class="nav-link fw-semibold">
+                        Contact Us
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- <hr>
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="/static/img/login-icon.png" alt="" width="32" height="32" class="rounded-circle me-2">
+        <strong>more</strong>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        <li><a class="dropdown-item" href="#">New project...</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Sign out</a></li>
+      </ul>
+    </div> -->
+
+
+
+
+
+
+    <!--  about page description section  -->
+
+
+    <div class="right-about-menu">
+        <p class="breadcrumb-About-us-display-for-computer" style="color:gray; font-size:16.5px;padding-top:1rem;">HOME
+            > PRIVACY POLICY</p>
+        <h2><img src="/static/img/privacy-policy.png" class="contact-logo">&nbsp; Privacy Policy </h2>
+
+        <br>
+
+        <p id="about-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium itaque, nihil
+            doloremque distinctio odio esse tempora nam obcaecati
+            libero impedit expedita omnis beatae ullam temporibus vel in dolores? Delectus ut doloribus inventore minus
+            accusamus odio pariatur quod harum iure architecto natus nobis,
+            repudiandae corrupti atque libero blanditiis tempore ullam quae id tenetur quidem. Quasi, rerum voluptates?
+            Sit consequuntur beatae saepe dolor alias. Officia, quidem? Aliquid aspernatur neque blanditiis dolorum
+            dolore facere odit quisquam soluta dignissimos odio iusto maxime deleniti sapiente fugiat, eos ea quidem
+            fugit nostrum ratione commodi eveniet voluptate quo? Sapiente labore fuga error corporis repellendus, est
+            voluptatum. Incidunt, consectetur. Facere, harum sint? Consequuntur nesciunt ab quam magni nam possimus.
+            Cum, explicabo laboriosam provident magni quam recusandae expedita repellendus ipsum impedit aliquam. Cum,
+            asperiores? Officiis repudiandae consequuntur vero tempore ullam reiciendis porro est blanditiis? Culpa
+            excepturi nisi tempore eaque, rem architecto. Voluptates, quae cupiditate? Suscipit doloribus tempore
+            necessitatibus perspiciatis dicta. Repellendus deleniti non provident, ipsum corrupti ratione doloribus
+            facere sequi vero at fuga eligendi. Voluptatem labore quisquam animi quibusdam commodi, asperiores cumque
+            corporis hic quo rerum ipsum at doloremque dignissimos ut suscipit. Maiores repellat optio, blanditiis quos
+            culpa architecto cum placeat obcaecati, pariatur soluta molestiae sequi dolor ratione magni quibusdam? Ipsum
+            explicabo, quia necessitatibus enim voluptatum error, minima distinctio tempora quo aut expedita
+            voluptatibus nostrum beatae architecto quisquam earum nisi possimus nam veritatis, numquam quas animi nihil
+            dolorem. Eveniet deleniti eos tempore minima mollitia cupiditate ipsum fuga voluptates nam enim,
+            consequuntur a repellendus laborum optio. Eum nisi eos eius unde in aliquid ipsa impedit sint repellat
+            praesentium. Repudiandae fugiat possimus, eveniet nemo aperiam odit nostrum adipisci aliquam neque at
+            repellat ipsam! Molestiae mollitia deserunt voluptatum porro suscipit minus veniam. Ipsa pariatur enim
+            possimus dolore iure accusamus harum ea necessitatibus sapiente ducimus. Eaque rerum fugit harum quis, aut
+            libero quam!<br>
+        </p>
+
+
+
+
+    </div>
+
+
+</section>
+
+<script>
+  
+    // this is the section where about us side bar and same as others side bar hide in mobile screens but shown in big screens and it can reverse the 
+    // display as per requirement on Click.
+  
+    
+    document.addEventListener("DOMContentLoaded", function () {
+      const hideButton = document.getElementById("left-hidden-visual-effect");
+      const areaHidden = document.querySelector(".left-about-menu");
+    
+      hideButton.addEventListener("click", hideButtonFunc);
+    
+      function hideButtonFunc() {
+        if (areaHidden.style.display === "none" || areaHidden.style.display === "") {
+          areaHidden.style.display = "block";
+        } else {
+          areaHidden.style.display = "none";
+        }
+      }
+    });
+    
+  </script>
+
+
+
+{% endblock %}
+
+</html>

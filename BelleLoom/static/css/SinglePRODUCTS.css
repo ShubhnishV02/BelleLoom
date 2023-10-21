@@ -1,0 +1,737 @@
+section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 10px;
+    gap: 12px;
+    border: 1px solid rgb(212, 208, 197);
+    margin-top: 2vh;
+    box-shadow: 1px 1px 5px 2px rgb(183, 170, 144);
+    border-bottom: none;
+
+}
+
+section .left-images-products {
+    width: 52%;
+    height: 184vh;
+    /* background-color: rgb(165, 231, 165); */
+    position: relative;
+    
+}
+
+.left-images-products img {
+    width: 32vw;
+    height: 46vw;
+    margin-top: 1vw;
+    margin-left: 3rem;
+    position: sticky;
+    top: 5%;
+}
+
+.right-description-products {
+    width: 45%;
+    height: 100%;
+    /* background-color: rgb(221, 199, 199); */
+    /* border: 10px solid red; */
+    margin-top: 1.2vw;
+    margin-right: 3rem;
+    padding: 2px 3.2vw;
+}
+
+.right-description-products h6 img {
+    width: 2.3vw;
+    height: 2.5vw;
+    margin-right: 10px;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+}
+
+table th,
+td {
+    padding: 5px 2.3rem;
+    text-align: center;
+}
+
+.right-description-products h3 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 1vw;
+    /* margin-left: 3rem; */
+}
+
+.right-description-products h2 {
+    color: rgb(96, 95, 95);
+    font-size: 22px;
+    font-weight: 600;
+    /* margin-left: 3rem; */
+}
+
+.right-description-products p {
+    /* margin-left: 3rem; */
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.right-description-products .quantity {
+    font-size: 17px;
+    font-weight: 600;
+    /* margin-top: 1rem; */
+    /* margin-right: 6rem; */
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.right-description-products .size {
+    /* margin-top: 1rem; */
+    /* margin-right: 6rem;
+    margin-left: 4rem; */
+    margin-bottom: 0.8rem;
+    align-items: center;
+}
+
+.right-description-products .quantity input {
+    margin-left: 3rem;
+    text-align: center;
+    width: 100%;
+}
+
+.right-description-products .add-to-cart {
+    background-color: rgb(25, 14, 52);
+    color: white;
+    font-weight: 700;
+    width: 25.2rem;
+    height: 3.2rem;
+    margin-top: 1rem;
+    /* margin-left: 3rem; */
+}
+.right-description-products .add-to-cart:hover{
+    color: rgb(25, 14, 52);
+    background-color: rgb(222, 221, 223);
+}
+
+.right-description-products .wishlist{
+    background-color: rgb(17, 193, 44);
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    width: 25.2rem;
+    height: 3.2rem;
+    margin-top: 1rem;
+    /* margin-left: 3rem; */
+}
+.right-description-products .wishlist:hover{
+    color: rgb(25, 14, 52);
+    background-color: rgb(95, 225, 115);
+}
+
+.right-description-products .wishlist i{
+    color:white;
+}
+.right-description-products .wishlist i:hover{
+    color:red;
+}
+
+
+/*----------------------------------------- Delivery and COD Description styling for CSS  -----------------------------------------*/
+
+.Delivery-COD-Availablity p {
+    font-size: 14px;
+    margin: 1.2rem 0;
+}
+
+.Delivery-COD-Availablity img {
+    width: 2vw;
+    height: 2vw;
+    margin: 1.2rem 0;
+    margin-right: 5px;
+}
+
+/* .delivery-cod-msg{
+    font-size: 11px;
+} */
+
+
+.left-right-for-delivery-COD-Description {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 3vw;
+    /* display: none; */
+
+}
+
+.left-right-for-delivery-COD-Description .left-half-right-for-delivery {
+    width: 60%;
+    height: 0.1%;
+    line-height: 0;
+    /* background-color: #444; */
+}
+
+.left-right-for-delivery-COD-Description .left-half-right-for-delivery h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 4px;
+}
+
+.left-right-for-delivery-COD-Description .left-half-right-for-delivery p {
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.left-right-for-delivery-COD-Description .right-half-right-for-COD {
+    width: 51%;
+    height: 0.1%;
+    /* background-color: brown; */
+
+}
+
+.left-right-for-delivery-COD-Description .right-half-right-for-COD h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 7px;
+    padding-top: 4px;
+}
+
+.left-right-for-delivery-COD-Description .right-half-right-for-COD p {
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 0;
+    padding-left: 5px;
+    margin-bottom: 0;
+}
+
+/*--------------------------------------------------   Delivery and COD description Section is over here   --------------------------------------------- */
+
+.right-description-products .description-state {
+    color: #6a6a6a;
+}
+
+.right-description-products .description-state p {
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.right-description-products .description-state ul li p {
+    margin-top: 0;
+    line-height: 1;
+    padding-top: 0;
+}
+
+.right-description-products .ships-in-business-days {
+    /* margin-top: 1rem; */
+    background-color: #e7f6fc;
+    width: 100%;
+    height: 2vw;
+    padding: 8px 4px;
+
+}
+
+.right-description-products .product-description-single-page {
+    margin-top: 10px;
+    font-size: 14px;
+
+}
+
+.right-description-products ul {
+    line-height: 0.8;
+    font-size: 14px;
+}
+
+.description-state h6 p {
+    line-height: 0;
+}
+
+/*--------------------------------------------     Style the button that is used to open and close the collapsible content  ------------------------------  */
+.collapsible {
+    /* background-color: #eee; */
+    color: #444;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+    height: 0;
+    overflow: hidden;
+    transition: 0s ease;
+}
+
+.collapsible.active + .content {
+    height: 100%; /* Adjust the height as needed */
+    transition: 0.1s ease;
+}
+.collapsible:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+
+}
+
+.collapsible.active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
+}
+
+/* -------------------------------------------------   Question box with contact enquiry box styling  -------------------------------- */
+
+.question-in-purchasing {
+    background-color: #f5f9fa;
+    color: black;
+    padding: 0 40px;
+    border: 1px solid #9ab4b4;
+    height: 100%;
+    margin-bottom: 8vw;
+}
+
+.question-in-purchasing h3 {
+    font-size: 19px;
+    font-weight: 700;
+    margin-top: 0;
+    padding-top: 20px;
+}
+
+.question-in-purchasing p {
+    font-size: 14px;
+    font-weight: 400;
+    /* margin-bottom: 2vw; */
+    padding-left: 0;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2vw;
+}
+
+.question-in-purchasing div {
+    line-height: 1;
+    height: 100%;
+    /* margin-top: 0.8rem; */
+}
+
+.question-in-purchasing img {
+    width: 1.5vw;
+    height: 1.5vw;
+    margin-right: 0.8rem;
+
+}
+
+/* -------------------------------------------------   Question box with contact enquiry box styling  is OVER HERE -------------------------------- */
+
+
+.left-images-products-after-stickyness {
+    width: 34%;
+    height: 12%;
+    /* border: 2px solid red; */
+    position: absolute;
+    top: 92.2rem;
+    object-fit: cover;
+    align-items: center;
+    justify-content: center;
+    left: 16.85%;
+    padding-bottom: 5%;
+
+}
+
+.left-images-products-after-stickyness img {
+    width: 10.35vw;
+    height: 14.6vw;
+    padding: 1.4px;
+
+}
+
+.carousel {
+    display: none;
+}
+
+.product-viewtag {
+    background-color: red;
+    color: #fff;
+    font-size: 11px;
+    line-height: 1;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 2.3rem;
+    left:83%;
+    padding: 7px 9px;
+    font-weight: 600;
+    min-width: 45px;
+    z-index: 555;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+#warn-message{
+    color: red;
+    width: 100vw;
+}
+
+.Size-Inch-Tape{
+    display:none;
+}
+
+
+@media screen and (max-width: 1024px){
+
+    .product-data{
+        width: 100%;
+        height: 100%;
+    }
+
+    section .left-images-products {
+        width: 85%;
+        height: 230vh;
+        /* background-color: rgb(165, 231, 165); */
+        position: relative;
+        
+    }
+    
+    .left-images-products img {
+        width: 82%;
+        height: 54vw;
+        margin-top: 1vw;
+        position: sticky;
+        top: 9%;
+    }
+
+    .right-description-products .add-to-cart {
+        font-weight: 700;
+        border-radius: 1%;
+        width: 100%;
+        height: 3.1rem;
+        margin-top: 1rem;
+    }
+    
+    .right-description-products .wishlist{
+        width: 100%;
+    }
+    .left-images-products-after-stickyness {
+        width: 42%;
+        height: 10%;
+        /* border: 2px solid red; */
+        position: absolute;
+        top: 92.2rem;
+        left: 10%;
+        padding-bottom: 5%;
+    
+    }
+    
+    .left-images-products-after-stickyness img {
+        width: 12.3vw;
+        height: 17.2vw;
+        padding: 1.4px;
+    
+    }
+    
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .carousel {
+        display: block;
+    }
+
+    .left-images-products {
+        display: none;
+    }
+
+    .left-images-products-after-stickyness {
+        display: none;
+    }
+
+    section {
+        width: 100%;
+        height: 100%;
+        display: block;
+        /* padding: 10px; */
+        border: 0px rgb(255, 255, 255);
+        margin-top: 0;
+        box-shadow: 0 0 0 0 rgb(183, 170, 144);
+    }
+
+
+
+
+    .right-description-products {
+        width: 100%;
+        height: 100%;
+        /* background-color: rgb(221, 199, 199); */
+        /* margin-left: 0.4rem; */
+        padding-top: 4px;
+        margin-top: 0;
+        /* padding-left: 3px; */
+    }
+
+    .right-description-products h6 img {
+        width: 8.5vw;
+        height: 9vw;
+        margin-right: 3px;
+    }
+
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 4px;
+    }
+
+    table th,
+    td {
+        padding: 2px 26px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .right-description-products h3 {
+        font-size: 22.5px;
+        font-weight: 700;
+        margin-top: 0;
+    }
+
+    .right-description-products h2 {
+        color: rgb(73, 73, 73);
+        font-size: 19px;
+        font-weight: 500;
+    }
+
+    .right-description-products .quantity {
+        font-size: 15px;
+        font-weight: 550;
+        margin-bottom: 1rem;
+        /* display: flex; */
+        align-items: center;
+    }
+
+    .right-description-products .size {
+        margin-bottom: 0.8rem;
+        align-items: center;
+    }
+
+    .right-description-products .quantity input {
+        margin-left: 2rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .right-description-products .add-to-cart {
+        background-color: rgb(25, 14, 52);
+        color: white;
+        font-weight: 700;
+        border-radius: 1%;
+        width: 100%;
+        height: 3.1rem;
+        margin-top: 1rem;
+    }
+    
+    .right-description-products .wishlist{
+        width: 100%;
+    }
+    
+    .right-description-products .wishlist i{
+        color:white;
+    }
+
+    /*----------------------------- Delivery and COD Description styling for CSS  for Mobile----------------------------------*/
+
+    .Delivery-COD-Availablity p {
+        font-size: 15px;
+        margin: 1.9rem 4px;
+    }
+
+    .Delivery-COD-Availablity img {
+        width: 9vw;
+        height: 9.2vw;
+        margin: 1.2rem 0;
+        margin-right: 10px;
+    }
+
+
+    .left-right-for-delivery-COD-Description {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        gap: 22px;
+        /* display: none; */
+    }
+
+    .left-right-for-delivery-COD-Description .left-half-right-for-delivery {
+        width: 55%;
+        height: 5%;
+        /* background-color: #444; */
+    }
+
+    .left-right-for-delivery-COD-Description .left-half-right-for-delivery h3 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-top: 0;
+        margin-left: 6px;
+    }
+
+    .left-right-for-delivery-COD-Description .left-half-right-for-delivery p {
+        font-size: 13px;
+        font-weight: 400;
+        margin-top: 0;
+        color: #5a5a5a;
+        line-height: 1.2;
+    }
+
+    .left-right-for-delivery-COD-Description .right-half-right-for-COD {
+        width: 50%;
+        height: 5%;
+        /* background-color: brown; */
+
+    }
+
+    .left-right-for-delivery-COD-Description .right-half-right-for-COD h3 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-top: 0;
+        margin-left: 6px;
+    }
+
+    .left-right-for-delivery-COD-Description .right-half-right-for-COD p {
+        font-size: 13px;
+        font-weight: 400;
+        margin-top: 0;
+        color: #5a5a5a;
+        line-height: 1.2;
+    }
+
+    /*--------------------------------------------------   Delivery and COD description Section is over here   --------------------------------------------- */
+
+    .right-description-products .description-state {
+        color: #6a6a6a;
+    }
+
+    .right-description-products .description-state p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .right-description-products .ships-in-business-days {
+        /* margin-top: 0rem; */
+        background-color: #f5f9fa;
+        width: 108%;
+        height: 10vw;
+        padding: 13px 8px;
+
+    }
+
+    .right-description-products .product-description-single-page {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .right-description-products ul {
+        line-height: 0.7;
+        font-size: 14px;
+    }
+
+
+    /*--------------------------------------------     Style the button that is used to open and close the collapsible content  ------------------------------  */
+    .collapsible {
+        /* background-color: #eee; */
+        color: #444;
+        cursor: pointer;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 14px;
+    }
+
+    /* Style the collapsible content. Note: hidden by default */
+    .content {
+        height: 0;
+        overflow: hidden;
+        transition: 0s ease;
+    }
+    
+    .collapsible.active + .content {
+        height: 100%; /* Adjust the height as needed */
+        transition: 0.1s ease;
+    }
+
+
+    .collapsible:after {
+        content: '\02795';
+        /* Unicode character for "plus" sign (+) */
+        font-size: 13px;
+        color: white;
+        float: right;
+        margin-left: 4px;
+    }
+
+    .active:after {
+        content: "\2796";
+        /* Unicode character for "minus" sign (-) */
+    }
+
+    /* -------------------------------------------------   Question box with contact enquiry box styling  -------------------------------- */
+
+
+    .question-in-purchasing {
+        padding: 0 30px;
+        height: 100%;
+        margin-bottom: 1.3rem;
+    }
+
+    .question-in-purchasing h3 {
+        font-size: 19px;
+        font-weight: 700;
+        margin-top: 0;
+        padding-top: 20px;
+    }
+
+    .question-in-purchasing p {
+        font-size: 14px;
+        font-weight: 400;
+        /* margin-bottom: 2vw; */
+        padding-left: 0;
+        margin-bottom: 2vw;
+        padding-bottom: 4vw;
+    }
+
+    .question-in-purchasing div {
+        line-height: 1;
+        height: 100%;
+        /* margin-top: 0.8rem; */
+    }
+
+    .question-in-purchasing img {
+        width: 7.5vw;
+        height: 7.5vw;
+        margin-right: 0.8rem;
+
+    }
+
+    /* -------------------------------------------------------------------------------------------------------- */
+
+    #warn-message{
+        color: red;
+    }
+
+
+}
