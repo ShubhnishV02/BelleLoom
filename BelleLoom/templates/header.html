@@ -139,20 +139,20 @@
                         {{ request.user }}
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{% url 'myorders' %}"><i
+                        <li><a class="dropdown-item" href=""><i
                                     class="fa-solid fa-bag-shopping"></i>&nbsp; My Orders</a></li>
-                        <li><a class="dropdown-item" href="{% url 'wishlist' %}"><i class="fa fa-heart"></i>&nbsp; My
+                        <li><a class="dropdown-item" href=""><i class="fa fa-heart"></i>&nbsp; My
                                 Wishlist</a></li>
                         <li class="dropdown-divider mb-0"></li>
-                        <li><a class="dropdown-item" href="{% url 'logoutpage' %}"><i
+                        <li><a class="dropdown-item" href=""><i
                                     class="fa-solid fa-right-from-bracket"></i>&nbsp; Logout</a></li>
                     </ul>
                 </div>
 
                 <!-- <a href="{% url 'logoutpage' %}"><button type="button" class="btn signup-button">Logout</button></a> -->
                 {% else %}
-                <a href="{% url 'loginpage' %}"><button type="button" class="btn me-1 log-button">Login</button></a>
-                <a href="{% url 'register' %}"><button type="button" class="btn signup-button">Sign-up</button></a>
+                <a href=""><button type="button" class="btn me-1 log-button">Login</button></a>
+                <a href=""><button type="button" class="btn signup-button">Sign-up</button></a>
 
                 {% endif %}
             </div>
@@ -276,22 +276,22 @@
                                 <li class="border-bottom"><a href="{% url 'homepage' %}"
                                         class="link-body-emphasis text-decoration-none rounded">Home</a>
                                 </li>
-                                <li class="border-bottom"><a href="{% url 'aboutus' %}"
+                                <li class="border-bottom"><a href=""
                                         class="link-body-emphasis text-decoration-none rounded">About Us</a>
                                 </li>
-                                <li><a href="{% url 'contactus' %}" class="link-body-emphasis text-decoration-none rounded">Contact Us</a>
+                                <li><a href="" class="link-body-emphasis text-decoration-none rounded">Contact Us</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li>
-                        <a href="{% url 'myorders' %}" class="btn rounded border-0 px-0 p-0 mt-3">
+                        <a href="" class="btn rounded border-0 px-0 p-0 mt-3">
                             <span class="font-family-of-sidebars">&nbsp;<i class="fa-solid fa-bag-shopping"></i> My
                                 Orders</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{% url 'wishlist' %}" class="btn rounded border-0 px-0 p-0 mt-3">
+                        <a href="" class="btn rounded border-0 px-0 p-0 mt-3">
                             <span class="font-family-of-sidebars">&nbsp;<i class="fa-solid fa-heart"></i> My
                                 Wishlist</span>
                         </a>
@@ -300,7 +300,7 @@
                     <li class="border-top my-3"></li>
                     {% if request.user.is_authenticated %}
                     <li>
-                        <a href="{% url 'logoutpage' %}" class="btn rounded border-0 px-0 mt-1 mb-5">
+                        <a href="" class="btn rounded border-0 px-0 mt-1 mb-5">
                             <span class="font-family-of-sidebars">&nbsp;<i class="fa-solid fa-right-from-bracket"></i>
                                 Logout</span>
                         </a>
@@ -308,14 +308,14 @@
                     {% else %}
 
                     <li>
-                        <a href="{% url 'loginpage' %}" class="btn rounded border-0 px-0 mt-1 ">
+                        <a href="" class="btn rounded border-0 px-0 mt-1 ">
                             <span class="font-family-of-sidebars">&nbsp;<i class="fa-solid fa-right-to-bracket"></i>
                                 Login</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="{% url 'register' %}" class="btn rounded border-0 px-0 mt-2 mb-5">
+                        <a href="" class="btn rounded border-0 px-0 mt-2 mb-5">
                             <span class="font-family-of-sidebars">&nbsp;<i class="fa-solid fa-user-plus"></i>
                                 Sign-up</span>
                         </a>

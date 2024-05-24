@@ -20,7 +20,7 @@ from SVFashion import views
 from django.conf import settings
 from django.conf.urls.static import static
 
-from store.controller import authview , cart, wishlist, checkout, orders
+from store.controller import cart
 
 
 urlpatterns = [
@@ -39,26 +39,8 @@ urlpatterns = [
     path('faqs/', views.FAQS, name="faqs" ),
 
 
-    path('register/', authview.register, name="register"),
-    path('login/', authview.loginpage, name="loginpage"),
-    path('logout/', authview.logoutpage, name="logoutpage"),
-
     path('add-to-cart/', cart.addtocart, name="addtocart"),
     path('cartview/', cart.viewcart, name="cartview"),
-    path('update-cart/', cart.updateCart, name="updateCart"),
-    path('delete-cart-item/', cart.deleteCartItem, name="deleteCartItem"),
-
-    path('wishlist/',wishlist.wishlistIndex, name='wishlist'),
-    path('add-to-wishlist/',wishlist.addtowishlist, name='addtowishlist'),
-    path('delete-from-wishlist/',wishlist.deleteFromWishlist, name='deleteFromWishlist'),
-
-
-    path('checkout/',checkout.checkoutINDEX, name='checkout'),
-    path('place-order/',checkout.placeOrder, name='placeorder'),
-
-
-    path('my-orders/',orders.myordersIndex, name='myorders'),
-    path('view-order/<str:t_no>',orders.orderview, name='orderview'),
 
     path('check-delivery-area/', views.check_delivery_area, name='check_delivery_area'),
 

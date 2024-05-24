@@ -12,7 +12,7 @@ def Homepage(request):
     newcollectiondata = ShopByNewCollection.objects.all()
     categorydata = Category.objects.filter(status=0)
     productsdata = Products.objects.all()
-    data = {'title' : 'RAFashion | HomePage',
+    data = {'title' : 'BelleLoom | HomePage',
         "newcollectiondata" : newcollectiondata,
         "categorydata" : categorydata,
         "productsdata": productsdata,
@@ -35,7 +35,7 @@ def categoryView(request, slug):
         return render(request, "CategoryPRODUCTS.html", data)
     else:
         messages.warning(request, "no such category found")
-        return redirect("")
+        return redirect("/")
 
 
 def SINGLEPRODUCT(request, cate_slug, prod_slug):

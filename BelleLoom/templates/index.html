@@ -89,7 +89,7 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="/static/img/carousel-image1.jpg" class="d-block cros-image" alt="...">
+                <img src="/static/img/carou_image11.jpg" class="d-block cros-image" alt="...">
                 <div class="carousel-caption d-md-block">
                     <h4>Vintage Collection</h4>
                     <p>Discover our timeless vintage collection.</p>
@@ -97,7 +97,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="/static/img/carousel-image1.jpg" class="d-block cros-image" alt="...">
+                <img src="/static/img/carou_image11.jpg" class="d-block cros-image" alt="...">
                 <div class="carousel-caption d-md-block">
                     <h4>Trendy Arrivals</h4>
                     <p>Explore our latest arrivals for a trendy look.</p>
@@ -105,7 +105,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="/static/img/carousel-image1.jpg" class="d-block cros-image" alt="...">
+                <img src="/static/img/carou_image11.jpg" class="d-block cros-image" alt="...">
                 <div class="carousel-caption d-md-block">
                     <h4>Home Decor</h4>
                     <p>Find the perfect decor for your home.</p>
@@ -179,7 +179,7 @@
                 {% for item in productsdata %}
                     {% if item.tag == "New" %}
                         <!-- <p class="product-viewtag-on-index badge fw-bold">{{item.tag}}</p> -->
-                        <a href="{% url 'productview' item.category.slug item.slug %}"><img src="{{ item.Product_Image_Main.url }}" draggable="false">
+                        <a href=""><img src="{{ item.Product_Image_Main.url }}" draggable="false">
                         <p>{{item.Product_Name}}</p><span>₹{{item.Selling_Price|stringformat:"d"}}</span>
                         </a>
                     {% endif %}
@@ -215,7 +215,7 @@
                 {% for item in productsdata %}
                     {% if item.category.Product_Name == "Hair Accessory" %}
                         <!-- <p class="product-viewtag-on-index badge fw-bold">{{item.tag}}</p> -->
-                        <a href="{% url 'productview' item.category.slug item.slug %}"><img src="{{ item.Product_Image_Main.url }}" draggable="false">
+                        <a href=""><img src="{{ item.Product_Image_Main.url }}" draggable="false">
                         <p>{{item.Product_Name}}</p><span>₹{{item.Selling_Price|stringformat:"d"}}</span>
                         </a>
                     {% endif %}
@@ -251,7 +251,7 @@
                     {% for item in productsdata %}
                         {% if item.category.Product_Name == "Saree" %}
                         <!-- <p class="product-viewtag-on-index badge fw-bold">{{item.tag}}</p> -->
-                        <a href="{% url 'productview' item.category.slug item.slug %}"><img src="{{ item.Product_Image_Main.url }}" draggable="false">
+                        <a href=""><img src="{{ item.Product_Image_Main.url }}" draggable="false">
                         <p>{{item.Product_Name}}</p><span>₹{{item.Selling_Price|stringformat:"d"}}</span>
                         </a>
                         {% endif %}
@@ -395,15 +395,6 @@
     </div>
     <!-- <hr style="background-color: rgb(54, 53, 53);"> -->
 </section>
-
-
-<!-- after the website goes high and posted some material on Instagram .. then use this tag -->
-
-<!-- <section>
-        <div class="find-on-instagram">
-
-        </div>
-    </section> -->
 
 
 
